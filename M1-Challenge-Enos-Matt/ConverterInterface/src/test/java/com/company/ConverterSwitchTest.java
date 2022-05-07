@@ -7,16 +7,18 @@ import static org.junit.Assert.*;
 public class ConverterSwitchTest {
 
     @Test
-    public void convertSwitchNumberToMonth() {
-        String actualResult = "";
-        String expectedResult = "" ;
+    public void shouldSwitchNumberToMonth() {
+        ConverterSwitch converterSwitch = new ConverterSwitch();
+        String actualResult = converterSwitch.convertMonth(3);
+        String expectedResult = "March" ;
         assertEquals(expectedResult, actualResult);
     }
 
     @Test
-    public void convertSwitchNumberToDay() {
-        String actualResult = "";
-        String expectedResult = "" ;
+    public void shouldSwitchNumberToDay() {
+        ConverterSwitch converterSwitch = new ConverterSwitch();
+        String actualResult = converterSwitch.convertDay(4);
+        String expectedResult = "Thursday" ;
         assertEquals(expectedResult, actualResult);
     }
 }
