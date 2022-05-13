@@ -11,13 +11,13 @@ paths:
       tags:
         - math-solution-controller
       operationId: subtract
-      requestBody:
+      requestBody: JSON object with operand1 and operand2
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/MathSolution'
         required: true
-      responses:
+      responses: Answer is the difference of operand1 and operand2 (operand1 - operand2)
         '200':
           description: OK
           content:
@@ -29,13 +29,13 @@ paths:
       tags:
         - math-solution-controller
       operationId: multiply
-      requestBody:
+      requestBody: JSON object with operand1 and operand2
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/MathSolution'
         required: true
-      responses:
+      responses: Answer is the result of multiplying operand1 and operand2 (operand1 * operand2)
         '200':
           description: OK
           content:
@@ -47,13 +47,13 @@ paths:
       tags:
         - math-solution-controller
       operationId: divide
-      requestBody:
+      requestBody:  JSON object with operand1 and operand2
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/MathSolution'
         required: true
-      responses:
+      responses:  Answer is the result of dividing operand1 and operand2 (operand1 / operand2)
         '200':
           description: OK
           content:
@@ -65,13 +65,13 @@ paths:
       tags:
         - math-solution-controller
       operationId: add
-      requestBody:
+      requestBody: JSON object with operand1 and operand2
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/MathSolution'
         required: true
-      responses:
+      responses:  Answer is the result of adding operand1 and operand2 (operand1 + operand2)
         '200':
           description: OK
           content:
@@ -89,7 +89,7 @@ paths:
           required: true
           schema:
             type: string
-      responses:
+      responses: Response should be a string with the name of the month corresponding to the valid integer input of 1 through 12.
         '200':
           description: OK
           content:
