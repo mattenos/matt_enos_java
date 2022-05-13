@@ -1,12 +1,14 @@
 package com.example.M2ChallengeEnosMatt.controller;
 
+import com.example.M2ChallengeEnosMatt.Month;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 @RestController
+@RequestMapping(value = "/month")
 public class MonthController {
-    @RequestMapping(value="/month/{monthNumber}", method=RequestMethod.GET)
+    @GetMapping(value="/{monthNumber}")
     @ResponseStatus(value = HttpStatus.OK)
     public String getMonth(@PathVariable String monthNumber) {
 
@@ -39,5 +41,19 @@ public class MonthController {
                 throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY, "Invalid Month Number Specified");
         }
     }
+
+//    @GetMapping(value = "/randomMonth")
+//    @ResponseStatus(value = HttpStatus.OK)
+//    public String getRandomMonth(@PathVariable String monthNumber){
+//        Month randomMonth = new Month();
+//        int randomInt = randomMonth.;
+//        int correctInt = randomInt + 1;
+//        System.out.println(correctInt);
+//
+//        for (int i = 0; i < 11; i++) {
+//            System.out.print((rand.nextInt(11) + 1) + " " );
+//        }
+//
+//    }
 
 }
