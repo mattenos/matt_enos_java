@@ -3,7 +3,9 @@ package com.company;
 public class IntegerMath {
 
     static int add(int a, int b) {
-        return a + b;
+        int answer = a + b;
+        System.out.println("" + a + " + " + b + " = " + answer );
+        return answer;
     }
 
     static int subtract(int a, int b) {

@@ -4,6 +4,9 @@ public class PartyBuilder {
     public static void main(String[] args) {
 
         Constable constable = new Constable();
+        Warrior warrior = new Warrior();
+        Farmer farmer = new Farmer();
+
         constable.setStrength(60);
         constable.setHealth(100);
         constable.setStamina(60);
@@ -12,10 +15,9 @@ public class PartyBuilder {
         constable.setRunning(false);
         constable.setArrested(false);
         constable.setJurisdiction("town");
-        constable.attack();
-        constable.arrestPlayer();
+        constable.attack(warrior);
+        constable.arrestPlayer(warrior);
 
-        Warrior warrior = new Warrior();
         warrior.setStrength(75);
         warrior.setHealth(100);
         warrior.setStamina(100);
@@ -24,9 +26,8 @@ public class PartyBuilder {
         warrior.setRunning(false);
         warrior.setArrested(false);
         warrior.setShieldStrength(100);
-        warrior.attack();
+        warrior.attack(constable);
 
-        Farmer farmer = new Farmer();
         farmer.setStrength(75);
         farmer.setHealth(100);
         farmer.setStamina(75);
@@ -36,7 +37,7 @@ public class PartyBuilder {
         farmer.setArrested(false);
         farmer.setPlowing(false);
         farmer.setHarvesting(false);
-        farmer.attack();
+        farmer.attack(warrior);
 
     }
 }

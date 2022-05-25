@@ -6,10 +6,11 @@ public class Calculator {
         IntegerMath integerMath = new IntegerMath();
 
         IntegerMath.add(1, 1);
-        IntegerMath.subtract(23,52);
-        IntegerMath.multiply(34,2);
-        IntegerMath.divide(12, 3);
-        IntegerMath.divide(12,7);
+        System.out.println("1 + 1 = " + IntegerMath.add(1,1));
+        IntegerMath.add(23,52);
+        IntegerMath.add(34,2);
+        IntegerMath.add(12, 3);
+        IntegerMath.add(12,7);
 
         DoubleMath.add(3.4,2.3);
         DoubleMath.multiply(6.7,4.4);

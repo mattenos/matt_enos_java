@@ -11,9 +11,11 @@ public class BaseCharacter {
     private boolean running;
     private boolean arrested;
 
-    public void attack() {
-
+    public void attack(BaseCharacter target) {
+        int newHealth = target.getHealth() - this.attackPower;
+        target.setHealth(newHealth);
     }
+
 
     public int getStrength() {
         return strength;

@@ -5,7 +5,12 @@ import java.util.Objects;
 public class Constable extends BaseCharacter{
     private String jurisdiction;
 
-    public void arrestPlayer() {
+    public void arrestPlayer(BaseCharacter character) {
+        character.setArrested(true);
+    }
+
+    public Constable(String jurisdiction) {
+        this.jurisdiction = jurisdiction;
     }
 
     public String getJurisdiction() {
