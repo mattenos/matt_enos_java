@@ -1,8 +1,8 @@
 package com.trilogyed.gamestorecatalog.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.trilogyed.gamestore.service.GameStoreServiceLayer;
-import com.trilogyed.gamestore.viewModel.TShirtViewModel;
+import com.trilogyed.gamestorecatalog.service.GameStoreServiceLayer;
+import com.trilogyed.gamestorecatalog.viewModel.TShirtViewModel;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

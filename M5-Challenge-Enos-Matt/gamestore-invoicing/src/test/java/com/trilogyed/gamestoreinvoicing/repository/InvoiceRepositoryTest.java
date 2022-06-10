@@ -1,8 +1,11 @@
 package com.trilogyed.gamestoreinvoicing.repository;
 
-import com.trilogyed.gamestore.model.*;
-import org.junit.Before;
+import com.trilogyed.gamestoreinvoicing.model.*;
+
+import org.aspectj.lang.annotation.Before;
+
 import org.junit.Test;
+
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,6 +16,7 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest

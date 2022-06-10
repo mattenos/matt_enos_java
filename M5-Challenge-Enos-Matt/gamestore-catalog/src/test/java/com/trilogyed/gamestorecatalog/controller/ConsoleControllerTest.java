@@ -1,8 +1,8 @@
 package com.trilogyed.gamestorecatalog.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.trilogyed.gamestore.service.GameStoreServiceLayer;
-import com.trilogyed.gamestore.viewModel.ConsoleViewModel;
+import com.trilogyed.gamestorecatalog.service.GameStoreServiceLayer;
+import com.trilogyed.gamestorecatalog.viewModel.ConsoleViewModel;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,6 +55,7 @@ public class ConsoleControllerTest {
         inConsole.setProcessor("AMD");
         inConsole.setPrice(new BigDecimal("199.89"));
 
+
         //Mock "out"put Console...
         ConsoleViewModel outConsole = new ConsoleViewModel();
         outConsole.setMemoryAmount("250GB");
@@ -64,6 +65,8 @@ public class ConsoleControllerTest {
         outConsole.setProcessor("AMD");
         outConsole.setPrice(new BigDecimal("199.89"));
         outConsole.setId(15);
+
+
 
         // the following mocks the service layer's method "createConsoleViewModel"
         // So we are mocking (not executing the service layer) since we are testing the controller here.
@@ -174,48 +177,48 @@ public class ConsoleControllerTest {
                 .andExpect(status().isNoContent()); //Expected response status code.
     }
 
-    @Test
-    public void shouldReturnConsoleByManufacturer() throws Exception {
-
-        List<ConsoleViewModel> consoleViewModelList = new ArrayList<>();
-
-        //Mock a list of Consoles...
-
-        //1st Console...
-        ConsoleViewModel outConsole1 = new ConsoleViewModel();
-        outConsole1.setMemoryAmount("250GB");
-        outConsole1.setQuantity(12);
-        outConsole1.setManufacturer("Sony");
-        outConsole1.setModel("PS4");
-        outConsole1.setProcessor("AMD");
-        outConsole1.setPrice(new BigDecimal("499.89"));
-        outConsole1.setId(15);
-
-        consoleViewModelList.add(outConsole1);
-
-        //2nd Console...
-        outConsole1 = new ConsoleViewModel();
-        outConsole1.setMemoryAmount("200GB");
-        outConsole1.setQuantity(12);
-        outConsole1.setManufacturer("Sony");
-        outConsole1.setModel("PS2");
-        outConsole1.setProcessor("AMD");
-        outConsole1.setPrice(new BigDecimal("249.99"));
-        outConsole1.setId(16);
-
-        consoleViewModelList.add(outConsole1);
-
-        //So we are mocking (not executing the service layer) since we are testing the controller here.
-        //Remember: we are testing the methodse in the CONTROLLER.
-        when(storeServiceLayer.getConsoleByManufacturer("Sony")).thenReturn(consoleViewModelList);
-
-        mockMvc.perform( MockMvcRequestBuilders
-                .get("/console/manufacturer/{manufacturer}", "Sony")
-                .accept(MediaType.APPLICATION_JSON))
-                .andDo(print()) //for debugging purposes. Prints the request, handler,... and response objects to the console below.
-                .andExpect(status().isOk())
-                .andExpect(content().json(mapper.writeValueAsString(consoleViewModelList)));
-    }
+//    @Test
+//    public void shouldReturnConsoleByManufacturer() throws Exception {
+//
+//        List<ConsoleViewModel> consoleViewModelList = new ArrayList<>();
+//
+//        //Mock a list of Consoles...
+//
+//        //1st Console...
+//        ConsoleViewModel outConsole1 = new ConsoleViewModel();
+//        outConsole1.setMemoryAmount("250GB");
+//        outConsole1.setQuantity(12);
+//        outConsole1.setManufacturer("Sony");
+//        outConsole1.setModel("PS4");
+//        outConsole1.setProcessor("AMD");
+//        outConsole1.setPrice(new BigDecimal("499.89"));
+//        outConsole1.setId(15);
+//
+//        consoleViewModelList.add(outConsole1);
+//
+//        //2nd Console...
+//        outConsole1 = new ConsoleViewModel();
+//        outConsole1.setMemoryAmount("200GB");
+//        outConsole1.setQuantity(12);
+//        outConsole1.setManufacturer("Sony");
+//        outConsole1.setModel("PS2");
+//        outConsole1.setProcessor("AMD");
+//        outConsole1.setPrice(new BigDecimal("249.99"));
+//        outConsole1.setId(16);
+//
+//        consoleViewModelList.add(outConsole1);
+//
+//        //So we are mocking (not executing the service layer) since we are testing the controller here.
+//        //Remember: we are testing the methodse in the CONTROLLER.
+//        when(storeServiceLayer.getConsoleByManufacturer("Sony")).thenReturn(consoleViewModelList);
+//
+//        mockMvc.perform( MockMvcRequestBuilders
+//                .get("/console/manufacturer/{manufacturer}", "Sony")
+//                .accept(MediaType.APPLICATION_JSON))
+//                .andDo(print()) //for debugging purposes. Prints the request, handler,... and response objects to the console below.
+//                .andExpect(status().isOk())
+//                .andExpect(content().json(mapper.writeValueAsString(consoleViewModelList)));
+//    }
 
     @Test
     public void shouldReturnAllConsoles() throws Exception {

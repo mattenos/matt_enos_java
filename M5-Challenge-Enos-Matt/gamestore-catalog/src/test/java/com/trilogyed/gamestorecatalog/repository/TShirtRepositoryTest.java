@@ -1,6 +1,6 @@
 package com.trilogyed.gamestorecatalog.repository;
 
-import com.trilogyed.gamestore.model.TShirt;
+import com.trilogyed.gamestorecatalog.model.TShirt;
 import com.trilogyed.gamestorecatalog.repository.TShirtRepository;
 import org.junit.Before;
 import org.junit.Test;

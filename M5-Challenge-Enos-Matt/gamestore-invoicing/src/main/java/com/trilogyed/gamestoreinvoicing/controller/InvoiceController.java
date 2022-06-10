@@ -1,7 +1,7 @@
 package com.trilogyed.gamestoreinvoicing.controller;
 
-import com.trilogyed.gamestore.service.GameStoreServiceLayer;
-import com.trilogyed.gamestore.viewModel.InvoiceViewModel;
+import com.trilogyed.gamestoreinvoicing.service.GameStoreServiceLayer;
+import com.trilogyed.gamestoreinvoicing.viewModel.InvoiceViewModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

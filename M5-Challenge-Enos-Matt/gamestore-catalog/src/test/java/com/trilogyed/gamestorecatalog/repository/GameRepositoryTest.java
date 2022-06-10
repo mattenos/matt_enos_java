@@ -1,6 +1,6 @@
 package com.trilogyed.gamestorecatalog.repository;
 
-import com.trilogyed.gamestore.model.Game;
+import com.trilogyed.gamestorecatalog.model.Game;
 import com.trilogyed.gamestorecatalog.repository.GameRepository;
 import org.junit.Before;
 import org.junit.Test;
